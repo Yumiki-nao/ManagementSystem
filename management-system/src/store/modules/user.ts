@@ -6,16 +6,22 @@ let useUserStore = defineStore('User',{
     
     state:()=>{
         return {
-
+            token:localStorage.getItem("TOKEN"),
         }
     },
     actions:{
-        userLogin(data:loginForm){
-            console.log(123);
+        async userLogin(data:loginForm){
+
+            let result:any = await reqLogin(data);
+            if (result.code == 200) {
+                this.token = result.data.token;
+                //本地存储
+                localStorage.setItem("TOKEN",result.data.token);
+                return 'ok';
+            }else{            
+                return Promise.reject(new Error(result.data.message))
+            }
             
-            console.log(data);
-            
-            //  reqLogin(data)
         }
     },
     getters:{
