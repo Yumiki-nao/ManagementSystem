@@ -1,15 +1,21 @@
-import { ElNotification } from 'element-plus'
-let message = (type:'success'|'error',msg:string) => {
-    if(type === 'success'){
-        ElNotification({
-            type:'success',
-            message:msg
-        })
-    }else{
-        ElNotification({
-            type:'error',
-            message:msg
-        })
-    }
-}
-export default message
+import { ElNotification } from "element-plus";
+const message = (
+  type: "success" | "error",
+  msg: string,
+  title?: undefined | string,
+) => {
+  if (type === "success") {
+    ElNotification({
+      type: "success",
+      message: msg,
+      title: title,
+    });
+  } else {
+    ElNotification({
+      type: "error",
+      message: msg,
+      title: title,
+    });
+  }
+};
+export default message;
