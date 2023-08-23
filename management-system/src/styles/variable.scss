@@ -1,8 +1,17 @@
 //设置scss全局变量
 
+//颜色
+$aside-nav-bacground-color: #001529; //左侧导航颜色
+$container-right-header-bacground-color:#ffffff; //头部颜色
+$container-right-main-bacground-color:#c4e2ff; //主要内容区颜色
+
+
 //左侧菜单的宽度
 $aside-nav-width:260px;
-$aside-nav-bacground-color: #001529;
+$aside-nav-title-color:white;//左侧菜单标题颜色
+$aside-nav-title-size:20px;//左侧菜单标题大小
+$aside-nav-logo-size:30px;//左侧菜单logo大小
+
 
 //顶部导航栏的高度
 $container-right-header-height:60px

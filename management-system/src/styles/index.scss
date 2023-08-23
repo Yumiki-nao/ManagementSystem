@@ -6,5 +6,10 @@
     width: 10px;
 }
 ::-webkit-scrollbar-track{
-    background-color: $aside-nav-bacground-color;
+    background: $aside-nav-bacground-color;
+}
+::-webkit-scrollbar-thumb{
+    width: 10px;
+    background-color: aliceblue;
+    border-radius: 10px;
 }

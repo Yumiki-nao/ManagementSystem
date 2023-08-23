@@ -1,6 +1,7 @@
 //axios二次封装
 import axios from 'axios';
-import {ElMessage} from 'element-plus'
+import {ElMessage} from 'element-plus';
+import useUserStore from '@/store/modules/user';
 //利用axios对象的create方法，创建axios实例
 let request = axios.create({
     baseURL:import.meta.env.VITE_APP_BASE_API,
@@ -8,6 +9,10 @@ let request = axios.create({
 });
 //添加请求和响应拦截器
 request.interceptors.request.use((config)=>{
+    let userStore = useUserStore();
+    if(userStore.token){
+        config.headers.token = userStore.token
+    }
     return config
 });
 request.interceptors.response.use((response)=>{

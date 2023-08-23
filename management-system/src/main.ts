@@ -9,6 +9,7 @@ import gloablComponent from "@/components/index";
 import "@/styles/index.scss";
 import router from "@/router/index";
 import pinia from "./store";
+import './permission'
 const app = createApp(App);
 app.use(gloablComponent);
 app.use(router);
